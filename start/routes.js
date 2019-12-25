@@ -16,6 +16,13 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
-})
+Route.group(() => {
+  Route.post('/', 'UserController.create')
+    .middleware('checkIfUserHasAccount')
+
+}).prefix('users')
+
+Route.group(() => {
+  Route.post('/', 'SessionController.create')
+
+}).prefix('sessions')
