@@ -10,8 +10,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: '@dm1n#r00t'
-      MYSQL_USER: fortics
-      MYSQL_PASSWORD: kvallo2019
+      MYSQL_USER: victor
+      MYSQL_PASSWORD: drinkcokein2020
       MYSQL_DATABASE: drink
     volumes:
       - ./.db_data:/var/lib/mysql
