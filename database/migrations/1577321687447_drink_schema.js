@@ -25,3 +25,4 @@ class DrinkSchema extends Schema {
 }
 
 module.exports = DrinkSchema
+

@@ -8,14 +8,7 @@ class UserController {
 
     const user = await User.create(data)
 
-    return {
-      status: true,
-      user: {
-        id: user.id,
-        username: user.username,
-        email: user.email
-      }
-    }
+    return user
   }
 
 }

@@ -17,12 +17,11 @@
 const Route = use('Route')
 
 Route.group(() => {
-  Route.post('/', 'UserController.create')
-    .middleware('checkIfUserHasAccount')
+  Route.post('/', 'UserController.create').validator('UserCreate')
 
 }).prefix('users')
 
 Route.group(() => {
-  Route.post('/', 'SessionController.create')
+  Route.post('/', 'SessionController.create').validator('UserLogin')
 
 }).prefix('sessions')
