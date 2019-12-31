@@ -29,5 +29,17 @@ Route.group(() => {
 Route.group(() => {
   Route.get('/', 'DrinkController.index')
   Route.post('/', 'DrinkController.store').validator('StoreDrink')
+  Route.get('/:id', 'DrinkController.show')
+  Route.put('/:id', 'DrinkController.update').validator('StoreDrink')
+  Route.delete('/:id', 'DrinkController.destroy')
 
 }).prefix('drinks').middleware(['auth'])
+
+Route.group(() => {
+  Route.get('/', 'DrinkTypeController.index')
+  Route.post('/', 'DrinkTypeController.store').validator('StoreType')
+  Route.get('/:id', 'DrinkTypeController.show')
+  Route.put('/:id', 'DrinkTypeController.update').validator('StoreType')
+  Route.delete('/:id', 'DrinkTypeController.destroy')
+
+}).prefix('drink_types').middleware(['auth'])

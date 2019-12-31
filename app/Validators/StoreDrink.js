@@ -8,6 +8,7 @@ class StoreDrink {
       price: 'required|number',
       milimiters: 'required|integer',
       quantity: 'required|integer',
+      type_id: 'required|integer',
     }
   }
 
@@ -21,6 +22,7 @@ class StoreDrink {
       'milimiters.integer': 'The milimiters field have a integer number format',
       'quantity.required': 'You must provide a value for quantity field',
       'quantity.integer': 'The quantity field have a integer number format',
+      'type.required': 'You must provide a value for type_id field'
     }
   }
 }

@@ -6,11 +6,16 @@ class _DatabaseOperations {
 
   constructor(model) {
     this.model = model
-    this.noRecordFound = 'No record found'
+    this.noRecordFound = 'No record found.'
   }
 
   async index(response) {
     const result = await this.model.all()
+
+    if(result === undefined) {
+      return response.status(404).json({ message: this.noRecordFound })
+    }
+
     return response.json(result)
   }
 
