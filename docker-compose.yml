@@ -6,12 +6,12 @@ services:
     container_name: drink_mysql
     command: --default-authentication-plugin=mysql_native_password
     ports:
-      - "3306:3306"
+      - "${DB_PORT}:${DB_PORT}"
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: '@dm1n#r00t'
       MYSQL_USER: victor
-      MYSQL_PASSWORD: drinkcokein2020
+      MYSQL_PASSWORD: drinkdb
       MYSQL_DATABASE: drink
     volumes:
       - ./.db_data:/var/lib/mysql

@@ -14,10 +14,10 @@ fi
 adonis --version 2>/dev/null
 
 if [ $? -ne 0 ]; then
-	yarn add global @adonisjs/cli
+	npm i -g @adonisjs/cli
 fi
 
-yarn
+npm i
 
 node ace migration:run --force
 

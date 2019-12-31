@@ -17,7 +17,7 @@
 const Route = use('Route')
 
 Route.group(() => {
-  Route.post('/', 'UserController.create').validator('UserCreate')
+  Route.post('/', 'UserController.store').validator('CreateUser')
 
 }).prefix('users')
 
@@ -25,3 +25,9 @@ Route.group(() => {
   Route.post('/', 'SessionController.create').validator('UserLogin')
 
 }).prefix('sessions')
+
+Route.group(() => {
+  Route.get('/', 'DrinkController.index')
+  Route.post('/', 'DrinkController.store').validator('StoreDrink')
+
+}).prefix('drinks').middleware(['auth'])
