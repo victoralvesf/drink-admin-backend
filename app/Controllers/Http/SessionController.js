@@ -8,6 +8,12 @@ class SessionController {
 
     return token
   }
+
+  async getCurrentUser({ auth }) {
+    const { id, username, email } = auth.current.user
+
+    return { id, username, email }
+  }
 }
 
 module.exports = SessionController

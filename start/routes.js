@@ -23,6 +23,7 @@ Route.group(() => {
 
 Route.group(() => {
   Route.post('/', 'SessionController.create').validator('UserLogin')
+  Route.get('/current_user', 'SessionController.getCurrentUser').middleware(['auth'])
 
 }).prefix('sessions')
 
